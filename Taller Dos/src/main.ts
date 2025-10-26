@@ -18,6 +18,43 @@ function renderSeries(series: Serie[]): void {
   });
 }
 
+renderCarousel(dataSeries);
+inicializarCarrusel(); // ← equivalente a tu initCarousel()
+
+function inicializarCarrusel(): void {
+  const multipleItemCarousel = document.querySelector("#carouselExample");
+  const inner = document.querySelector(".carousel2-inner") as HTMLElement;
+  const items = document.querySelectorAll(".carousel2-item");
+  const prevBtn = document.querySelector(".carousel2-control-prev");
+  const nextBtn = document.querySelector(".carousel2-control-next");
+
+  if (!multipleItemCarousel || !inner || items.length === 0 || !prevBtn || !nextBtn) {
+    console.warn("Carrusel no inicializado: faltan elementos");
+    return;
+  }
+
+  const cardWidth = (items[0] as HTMLElement)?.clientWidth ?? 0;
+  let scrollPosition = 0;
+
+  nextBtn.addEventListener("click", () => {
+    if (scrollPosition < inner.scrollWidth - cardWidth * 4) {
+      scrollPosition += cardWidth;
+      inner.scrollTo({ left: scrollPosition, behavior: "smooth" });
+    }
+  });
+
+  prevBtn.addEventListener("click", () => {
+    if (scrollPosition > 0) {
+      scrollPosition -= cardWidth;
+      inner.scrollTo({ left: scrollPosition, behavior: "smooth" });
+    }
+  });
+
+  if (!window.matchMedia("(min-width:576px)").matches) {
+    multipleItemCarousel.classList.add("slide");
+  }
+}
+
 function renderCarousel(series: Serie[]): void {
   const carouselContainer = document.getElementById("carousel-container");
   if (!carouselContainer) return;

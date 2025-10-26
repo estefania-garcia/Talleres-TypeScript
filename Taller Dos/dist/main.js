@@ -16,6 +16,37 @@ function renderSeries(series) {
         tbody.appendChild(row);
     });
 }
+renderCarousel(dataSeries);
+inicializarCarrusel(); // ← equivalente a tu initCarousel()
+function inicializarCarrusel() {
+    var _a, _b;
+    const multipleItemCarousel = document.querySelector("#carouselExample");
+    const inner = document.querySelector(".carousel2-inner");
+    const items = document.querySelectorAll(".carousel2-item");
+    const prevBtn = document.querySelector(".carousel2-control-prev");
+    const nextBtn = document.querySelector(".carousel2-control-next");
+    if (!multipleItemCarousel || !inner || items.length === 0 || !prevBtn || !nextBtn) {
+        console.warn("Carrusel no inicializado: faltan elementos");
+        return;
+    }
+    const cardWidth = (_b = (_a = items[0]) === null || _a === void 0 ? void 0 : _a.clientWidth) !== null && _b !== void 0 ? _b : 0;
+    let scrollPosition = 0;
+    nextBtn.addEventListener("click", () => {
+        if (scrollPosition < inner.scrollWidth - cardWidth * 4) {
+            scrollPosition += cardWidth;
+            inner.scrollTo({ left: scrollPosition, behavior: "smooth" });
+        }
+    });
+    prevBtn.addEventListener("click", () => {
+        if (scrollPosition > 0) {
+            scrollPosition -= cardWidth;
+            inner.scrollTo({ left: scrollPosition, behavior: "smooth" });
+        }
+    });
+    if (!window.matchMedia("(min-width:576px)").matches) {
+        multipleItemCarousel.classList.add("slide");
+    }
+}
 function renderCarousel(series) {
     const carouselContainer = document.getElementById("carousel-container");
     if (!carouselContainer)
@@ -26,7 +57,8 @@ function renderCarousel(series) {
         item.innerHTML = `
       <div class="card">
         <div class="img-wrapper">
-          <img src="${serie.poster}" class="card-img-top" alt="${serie.name}">
+          <img [src]="serie.poster" class="card-img-top" [alt]="serie.name">
+          
         </div>
         <div class="card-body">
           <h5 class="card-title">${serie.name}</h5>
