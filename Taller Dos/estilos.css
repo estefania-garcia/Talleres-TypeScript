@@ -1,0 +1,542 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+    padding-top: 0;
+}
+
+.contenedor {
+    display: grid;
+    position: absolute;
+    width: 100%;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: auto;
+    gap: 8px;
+}
+
+.menu {
+    z-index: 1030;
+    overflow: visible;
+    grid-column: 1 / -1;
+    height: 60px;
+}
+
+.navbar-brand {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #5f48d1;
+    transition: 0.5s;
+}
+
+.navbar-brand:hover {
+    color: #413094;
+    letter-spacing: 0.1em;
+}
+
+.icono ion-icon {
+    font-size: 1.8rem;
+    color: #5f48d1;
+    margin-right: 10px;
+    align-items: center;
+    align-content: center;
+    margin-top: 5px;
+}
+
+.menu-items {
+    align-items: start;
+    align-content: start;
+}
+
+.navbar-toggler {
+    border: none;
+    font-size: 1.25rem;
+    color: rgba(0, 0, 0, 0.78);
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.navbar-toggler ion-icon {
+    font-size: 1.5em;
+}
+
+.navbar-toggler:hover {
+    color: #5f48d1;
+}
+
+.nav-link2 {
+    text-decoration: none;
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.profile {
+    background-color: #5f48d1;
+    color: white;
+    font-size: 14px;
+    padding: 8px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.5s;
+    align-items: center;
+    align-content: center;
+}
+
+.profile:hover {
+    background-color: #413094;
+    letter-spacing: 0.1em;
+}
+
+.btn-close:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.nav-link {
+    color: #3b3b3ca9;
+    font-weight: 500;
+    font-family: 'Ubuntu', sans-serif;
+    position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #000;
+}
+
+#offcanvasNavbar .offcanvas-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #5f48d1;
+    transition: 0.5s;
+}
+
+#offcanvasNavbar .offcanvas-title:hover {
+    color: #413094;
+    letter-spacing: 0.1em;
+}
+
+.mini-dropdown {
+    border: 2px solid #413094;
+}
+
+.dropdown-divider {
+    border: 0.1px solid #4130947a;
+}
+
+.dropdown-item:hover {
+    background-color: #5f48d1;
+    color: white;
+    letter-spacing: 0.1em;
+}
+
+.titulo {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    height: 70px; 
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    background: #41309486;
+    border-radius: 6px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.titulo h1 {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    transition: 0.5s;
+}
+
+.titulo h1::before {
+    content: '|';
+    display: inline-block;
+    margin-right: 10px;
+    color: #1b114f;
+    margin: 0 0 0 20px;
+    padding: 10px;
+}
+
+.titulo h1:hover {
+    letter-spacing: 0.1em;
+    color: #1b114f;
+}
+
+.buscar {
+    grid-column: 1 / span 10;
+    grid-row: 3;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    gap: 15px;
+    border-radius: 6px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.buscador {
+    position: relative;
+    width: 300px;
+    margin: 0 10px;
+}
+
+.buscador label {
+    position: relative;
+    width: 100%;
+    color: rgb(84, 81, 81);
+}
+
+.buscador label input {
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    padding: 5px 20px;
+    padding-left: 35px;
+    outline: none;
+    color: white;
+    border: 2px solid rgba(95, 72, 209, 0.18);
+    background-color: rgba(255, 255, 255, 0.02);
+    transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.buscador label input::placeholder {
+    color: rgba(0, 0, 0, 0.672);
+}
+
+.buscador label input:hover::placeholder {
+    color: #413094;
+}
+
+.buscador label input:focus {
+    border-color: #5f48d1;
+    box-shadow: 0 0 0 4px rgba(95, 72, 209, 0.12);
+    outline: none;
+}
+
+.filtro {
+    background-color: #432db5;
+    color: white;
+    font-size: 14px;
+    padding: 8px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.5s;
+    align-items: center;
+    align-content: center;
+}
+
+.filtro:hover {
+    background-color: #413094;
+    letter-spacing: 0.1em;
+}
+
+.editar {
+    grid-column: 11 / -1;
+    grid-row: 3;
+    height: 50px; 
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 20px;
+}
+
+.editar button {
+    font-size: 1em;
+    text-transform: uppercase;
+    padding: 10px 35px;
+    background: linear-gradient(to bottom right, #6281f3, #49139f);
+    color: white;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+.editar button:hover {
+    letter-spacing: 0.2em;
+    background: rgba(255, 255, 255, 0.3);
+    color: #413094;
+}
+
+.editar ion-icon {
+    margin-right: 10px;
+    font-size: 1.2rem;
+    vertical-align: middle;
+}
+
+.tabla {
+    grid-column: 1 / -1;
+    grid-row: 4; 
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.tabla {
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.table {
+    margin-bottom: 0;
+}
+
+.table-striped thead tr {
+  --bs-table-bg: #413094;
+}
+
+.table-striped tbody tr:nth-child(odd) {
+    --bs-table-bg: #4130945e;
+}
+
+.table-striped tbody tr:nth-child(even) {
+    --bs-table-bg: #413094;
+}
+
+.table th, .table td, .table tr {
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    align-items: center;
+    align-content: center;
+}
+
+.form-check-input:focus {
+  border-color: #6281f3;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+.form-check-input:checked {
+  background-color: #1b114f;
+  border-color: #413094;
+}
+
+.tabla h2 {
+    color: #1b114f;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: 0.5s;
+}
+
+.tabla h2::before {
+    content: '|';
+    display: inline-block;
+    margin-right: 10px;
+    color: #6350be;
+    margin: 0 0 0 5px;
+    padding: 10px;
+}
+
+.tabla h2:hover {
+    letter-spacing: 0.02em;
+    color: #6281f3;
+}
+
+.cartas {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    height: auto;
+    overflow: hidden;
+}
+
+#carouselExample {
+    height: 100%;
+}
+
+.carousel2-inner {
+    padding: 1em;
+}
+
+.card {
+    margin: 0.5em;
+    box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+    border: none;
+}
+
+#carouselExample .carousel-control-prev,
+#carouselExample .carousel-control-next {
+    background-color: #000000;
+    width: 6vh;
+    height: 6vh;
+    border-radius: 50%;
+    top: 42%;
+    transform: translateY(-50%);
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.card .img-wrapper {
+    max-width: 100%;
+    height: 15vw;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.card img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#carouselExample .carousel-item {
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+}
+
+#carouselExample .card {
+    position: relative;
+    overflow: hidden;
+}
+
+#carouselExample .card,
+#carouselExample .carousel-item {
+    background: transparent;
+}
+
+#carouselExample.carousel .carousel2-inner,
+#carouselExample .carousel2-inner {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+#carouselExample .card .card-body {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.65), rgba(0,0,0,0.35));
+    color: #fff;
+    transform: translateY(100%);
+    transition: transform 320ms ease, opacity 320ms ease;
+    padding: 1rem;
+    opacity: 0;
+}
+
+#carouselExample .card:hover .card-body,
+#carouselExample .card:focus-within .card-body {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.card-body button {
+    font-size: 1em;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 5px 25px;
+    background: linear-gradient(to bottom right, #6281f3, #49139f);
+    color: white;
+    letter-spacing: 0.05em;
+    margin-bottom: 10px;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+.card-body button:hover {
+    letter-spacing: 0.2em;
+    background: rgba(255, 255, 255, 0.3);
+    color: #413094;
+}
+
+.card-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media (min-width: 991px) {
+    .nav-link::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background-color: #5f48d1;
+        visibility: hidden;
+        transition: 0.5s ease-in-out;
+    }
+    .nav-link:hover::before,
+    .nav-link.active::before {
+        width: 100%;
+        visibility: visible;
+    }
+}
+
+@media (max-width: 991px) {
+    .nav-link::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background-color: #5f48d1;
+        visibility: hidden;
+        transition: 0.5s ease-in-out;
+    }
+    .nav-link:hover::before,
+    .nav-link.active::before {
+        width: 100%;
+        visibility: visible;
+    }
+}
+
+@media (max-width: 767px) {
+    #carouselExample .card .img-wrapper { 
+        height: 17em; 
+    }
+    #carouselExample .card .card-body {
+        position: relative;
+        transform: none;
+        opacity: 1;
+        background: rgba(0,0,0,0.45);
+    }
+}
+
+@media (min-width: 576px) {
+    .carousel2-inner {
+        display: flex;
+    }
+    .carousel2-item {
+        display: block;
+        margin-right: 0;
+        flex: 0 0 calc(100% / 3);
+    }
+    .img-wrapper {
+        height: 21vw;
+    }
+}
+
+@media (min-width: 768px) {
+    #carouselExample .carousel-item {
+        margin-right: 0;
+        flex: 0 0 33.333333%;
+        display: block;
+    }
+    #carouselExample .carousel-inner {
+        display: flex;
+    }
+}
